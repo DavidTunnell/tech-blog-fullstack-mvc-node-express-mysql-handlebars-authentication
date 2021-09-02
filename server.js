@@ -12,8 +12,12 @@ const PORT = process.env.PORT || 3001;
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 
+//allow api to use json and url encoding
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 //set public folder 
 app.use(express.static(path.join(__dirname, 'public')));
+
 // Sets up the routes
 app.use(require('./controllers/index-routes'));
 
