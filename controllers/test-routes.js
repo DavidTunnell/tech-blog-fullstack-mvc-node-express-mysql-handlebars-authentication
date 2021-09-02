@@ -2,6 +2,16 @@ const router = require('express').Router();
 const path = require('path');
 const Test = require('../models/Test');
 
+
+router.get('/', async(req, res) => {
+    const testData = await Test.findAll().catch((err) => {
+        res.json(err);
+    });
+    const tests = testData.map((test) => test.get({ plain: true }));
+    res.render('test', { tests });
+});
+
+
 //dont do this, use API
 //this is direct from DB to rendering server side, API is better and then consumed on client
 router.get('/:id', async(req, res) => {
