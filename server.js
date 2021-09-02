@@ -3,6 +3,10 @@ const express = require('express');
 const expressHandlebars = require('express-handlebars');
 const path = require('path');
 const handlebars = expressHandlebars.create({});
+const sequelize = require('./config/connection');
+
+//if tables don't exist on startup create them, this will loose seed data because it drops and creates table
+// const Test = require('./models/Test');
 
 // Sets up the Express App
 const app = express();
@@ -21,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Sets up the routes
 app.use(require('./controllers/index-routes'));
 
-// Starts the server to begin listening
-app.listen(PORT, () => {
-    console.log('Server listening on port: ' + PORT);
+// Starts the server to begin listening with sequelize for db connection
+sequelize.sync({ force: true }).then(() => {
+    app.listen(PORT, () => console.log('Now listening: ' + PORT));
 });
