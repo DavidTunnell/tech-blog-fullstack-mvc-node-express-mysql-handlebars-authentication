@@ -1,3 +1,4 @@
+# 14 Model-View-Controller (MVC): Tech Blog
 
 //quality readme - url to repo
 //project comments
@@ -8,15 +9,6 @@
 goal: CMS-style blog site similar to a Wordpress site, publish blog posts, comment on posts, MVC,
 
 =====
-
-# 14 Model-View-Controller (MVC): Tech Blog
-## User Story
-
-```md
-AS A developer who writes about tech
-I WANT a CMS-style blog site
-SO THAT I can publish articles, blog posts, and my thoughts and opinions
-```
 
 ## Acceptance Criteria
 
