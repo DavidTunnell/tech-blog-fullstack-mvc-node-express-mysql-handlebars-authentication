@@ -7,12 +7,16 @@
 //use: node/express/handlebars/mysql2?/sequelize/dotenv/express-session/connect-session-sequelize/bcrypt
 
 //pages
--signup/create account
--login (or same?)
--index
 -dashboard/post a blog post (presented with any blog posts I have already created and the option to add a new blog post, able to delete or update my post and taken back to an updated dashboard)
--logout 
+
+
+
+//Front end done:
+-login (or same?) 
+-index
 -blog post page (post title, contents, post creator’s username, and date created for that post and have the option to leave a comment)
+-signup/create account
+-logout 
 
 goal: CMS-style blog site similar to a Wordpress site, publish blog posts, comment on posts, MVC,
 
