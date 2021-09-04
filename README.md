@@ -1,14 +1,23 @@
 # Tech Blog - MVC, Node.js, Express.js, Handlebars.js, MySQL, Bulma
 
-Describe functionality here.
+A full stack blog project. [Live Demo Here](https://www.heroku.com).
 
-* Create accounts.... login/logout
-* Create, Read, Update and Delete Blog Posts
-* The Ability to Comment on Blog Posts
+Features:
+
+* A homepage that showcases existing blog posts. 
+* A navigation bar serving express routes.
+* A dashboard to create, read, update and delete blog posts for the admin.
+* Individual pages for users to create accounts, login and logout using the site using authentication. ***
+* The ability for users comment on blog posts.
+* An auto timeout logout where after a certain amount of time the user will need to login again for certain actions (add, update, delete, comments). ***
+* Role based authorization/security for parts of the application***
 * Client-Side API Consumption and AJAX DOM Manipulation
-* API, what the server does...
+* API that serves JSON via Database
+* Templated view engine for reusable code
+* Modern responsive interface design
+* Automated database schema generation and seed data (and a SQL script to generate the database itself).
 
-This full stack project is a blog with the following technologies/methodologies. 
+This project uses the following technologies/methodologies. 
 
 * [MVC Architecture](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)
 * Designed with Extensibility in Mind (Notice the Controller Routes, Client-Side JavaScript and Handlebar Views)
@@ -19,7 +28,10 @@ This full stack project is a blog with the following technologies/methodologies.
 * [Handlebars.js](https://handlebarsjs.com/) for Dynamic View Templating and Server Side HTML Rendering
 * [Bulma](https://bulma.io/) and the [Blog 2 Template](https://github.com/BulmaTemplates/bulma-templates/blob/master/templates/blog-tailsaw.html) as a CSS Style Framework
 * [Nodemon](https://www.npmjs.com/package/nodemon) for Easier Server Development
+* [Heroku](https://www.heroku.com) for Demo Deployment
 * ADD UNIT TESTS????
+
+* todo: the [bcrypt package](https://www.npmjs.com/package/bcrypt) to hash passwords, and the [express-session](https://www.npmjs.com/package/express-session) and [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize) packages to add authentication.
 
 The project uses [Node.js](https://nodejs.org/en/) and [Express.js](https://expressjs.com/) as its server along with [Handlebars.js](https://handlebarsjs.com/) as its view/templating engine. The file to run it is `./server.js`. More details in the installation section. The ar
 
@@ -50,15 +62,10 @@ The project uses [Node.js](https://nodejs.org/en/) and [Express.js](https://expr
 // Application loads with no errors. - w2 nu checker
 //use: node/express/handlebars/mysql2?/sequelize/dotenv/express-session/connect-session-sequelize/bcrypt
 
-
--work on readme once this is done for what you have done so far^
-
-
 //table ideas
 -Users
 -posts - fk users and comments tables
 -comments fk posts
-
 
 =====
 
