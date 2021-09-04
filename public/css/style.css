@@ -7,6 +7,26 @@ nav.navbar {
     max-height: 75%;
 }
 
+.hug {
+    margin-top: -3em;
+}
+
+.table-id {
+    width: 10%;
+}
+
+.table-title {
+    width: auto;
+}
+
+.table-edit {
+    width: 6%;
+}
+
+.table-delete {
+    width: 6%;
+}
+
 @media only screen and (max-width: 1025px) {
     .navbar-item img {
         max-height: 3em;

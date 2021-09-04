@@ -6,8 +6,17 @@
 // Application loads with no errors. - w2 nu checker
 //use: node/express/handlebars/mysql2?/sequelize/dotenv/express-session/connect-session-sequelize/bcrypt
 
+
+
+
 //pages
--dashboard/post a blog post (presented with any blog posts I have already created and the option to add a new blog post, able to delete or update my post and taken back to an updated dashboard)
+
+
+-^^ edit blog post page???
+
+-work on readme once this is done for what you have done so far^
+
+
 
 
 
@@ -17,6 +26,15 @@
 -blog post page (post title, contents, post creator’s username, and date created for that post and have the option to leave a comment)
 -signup/create account
 -logout 
+-dashboard/post a blog post (presented with any blog posts I have already created and the option to add a new blog post, able to delete or update my post and taken back to an updated dashboard)
+-create blog post page
+
+
+//table ideas
+-Users
+-posts - fk users and comments tables
+-comments fk posts
+
 
 goal: CMS-style blog site similar to a Wordpress site, publish blog posts, comment on posts, MVC,
 
