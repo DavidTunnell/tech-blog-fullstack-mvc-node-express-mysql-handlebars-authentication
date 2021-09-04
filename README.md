@@ -1,4 +1,48 @@
-# 14 Model-View-Controller (MVC): Tech Blog
+# Tech Blog - MVC, Node.js, Express.js, Handlebars.js, MySQL, Bulma
+
+Describe functionality here.
+
+* Create accounts.... login/logout
+* Create, Read, Update and Delete Blog Posts
+* The Ability to Comment on Blog Posts
+* Client-Side API Consumption and AJAX DOM Manipulation
+* API, what the server does...
+
+This full stack project is a blog with the following technologies/methodologies. 
+
+* [MVC Architecture](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)
+* Designed with Extensibility in Mind (Notice the Controller Routes, Client-Side JavaScript and Handlebar Views)
+* [Node.js](https://nodejs.org/en/) and [Express.js](https://expressjs.com/) as the Server for API and HTTP requests
+* Custom [MySQL](https://www.mysql.com/) Database Schema
+* [Sequelize.js](https://sequelize.org/) for [Object Relational Mapping](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping), Database Interaction, [Routing](https://expressjs.com/en/guide/routing.html) and Schema Generation and Seeding
+* [Dotenv](https://www.npmjs.com/package/dotenv) for Database Connection Settings
+* [Handlebars.js](https://handlebarsjs.com/) for Dynamic View Templating and Server Side HTML Rendering
+* [Bulma](https://bulma.io/) and the [Blog 2 Template](https://github.com/BulmaTemplates/bulma-templates/blob/master/templates/blog-tailsaw.html) as a CSS Style Framework
+* [Nodemon](https://www.npmjs.com/package/nodemon) for Easier Server Development
+* ADD UNIT TESTS????
+
+The project uses [Node.js](https://nodejs.org/en/) and [Express.js](https://expressjs.com/) as its server along with [Handlebars.js](https://handlebarsjs.com/) as its view/templating engine. The file to run it is `./server.js`. More details in the installation section. The ar
+
+## Installation
+
+## Screenshots
+
+### Homepage
+
+### View Post and Comments
+
+### Sign up
+
+### Login
+
+### Dashboard / CRUD for Posts
+
+### Edit Post
+
+### Logout
+
+
+==========================
 
 //quality readme - url to repo
 //project comments
@@ -7,27 +51,7 @@
 //use: node/express/handlebars/mysql2?/sequelize/dotenv/express-session/connect-session-sequelize/bcrypt
 
 
-
-
-//pages
-
-
--^^ edit blog post page???
-
 -work on readme once this is done for what you have done so far^
-
-
-
-
-
-//Front end done:
--login (or same?) 
--index
--blog post page (post title, contents, post creator’s username, and date created for that post and have the option to leave a comment)
--signup/create account
--logout 
--dashboard/post a blog post (presented with any blog posts I have already created and the option to add a new blog post, able to delete or update my post and taken back to an updated dashboard)
--create blog post page
 
 
 //table ideas
@@ -35,8 +59,6 @@
 -posts - fk users and comments tables
 -comments fk posts
 
-
-goal: CMS-style blog site similar to a Wordpress site, publish blog posts, comment on posts, MVC,
 
 =====
 
