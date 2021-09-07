@@ -11,11 +11,11 @@ Features:
 * The ability for users comment on blog posts.
 * An auto timeout logout where after a certain amount of time the user will need to login again for certain actions (add, update, delete, comments). ***
 * Role based authorization/security for parts of the application***
-* Client-Side API Consumption and AJAX DOM Manipulation
-* API that serves JSON via Database
-* Templated view engine for reusable code
-* Modern responsive interface design
-* Automated database schema generation and seed data (and a SQL script to generate the database itself).
+* Client-side API consumption and AJAX DOM manipulation.
+* An API that serves JSON via Database.
+* A Templated view engine for reusable code.
+* A Modern responsive interface design.
+* An Automated database schema generation and seed data (and a SQL script to generate the database itself).
 
 This project uses the following technologies/methodologies. 
 
@@ -72,11 +72,11 @@ The project uses [Node.js](https://nodejs.org/en/) and [Express.js](https://expr
 ## Acceptance Criteria
 
 ```md
-GIVEN a CMS-style blog site
+GIVEN a CMS-style blog site *
 WHEN I visit the site for the first time
 THEN I am presented with the homepage, which includes existing blog posts if any have been posted; navigation links for the homepage and the dashboard; and the option to log in
-WHEN I click on the homepage option
-THEN I am taken to the homepage
+WHEN I click on the homepage option *
+THEN I am taken to the homepage *
 
 WHEN I click on any other links in the navigation
 THEN I am prompted to either sign up or sign in
