@@ -1,72 +1,105 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Tech Blog</title>
-  <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/bulma-divider.css">
-  <link rel="stylesheet" href="../css/style.css">
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Tech Blog</title>
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css"
+        />
+        <link
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            rel="stylesheet"
+            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="../css/bulma-divider.css" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <script src="../js/config/apiConfig.js"></script>
+    </head>
 
-<body>
-  <!-- START NAV -->
-  <nav class="navbar">
-    <div class="container">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-          <img class="main-logo" src="../images/logo.png" alt="Logo">
-        </a>
-        <span class="navbar-burger burger" data-target="navbarMenu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-      </div>
-      <div id="navbarMenu" class="navbar-menu">
-        <div class="navbar-end">
-          {{!-- <div class=" navbar-item">
+    <body>
+        <!-- START NAV -->
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="/">
+                        <img
+                            class="main-logo"
+                            src="../images/logo.png"
+                            alt="Logo"
+                        />
+                    </a>
+                    <span class="navbar-burger burger" data-target="navbarMenu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </div>
+                <div id="navbarMenu" class="navbar-menu">
+                    <div class="navbar-end">
+                        {{! <div class=" navbar-item">
             <div class="control has-icons-left">
               <input class="input is-rounded" type="email" placeholder="Search">
               <span class="icon is-left">
                 <i class="fa fa-search"></i>
               </span>
             </div>
-          </div> --}}
-          <a class="navbar-item is-active is-size-5 has-text-weight-semibold" href="/">
-            Home
-          </a>
-          <a class="navbar-item is-size-5 has-text-weight-semibold" href="/dashboard">
-            Dashboard
-          </a>
-          <a class="navbar-item is-size-5 has-text-weight-semibold" href="/login/">
-            Login
-          </a>
-          <a class="navbar-item is-size-5 has-text-weight-semibold" href="/signup/">
-            Sign up?
-          </a>
-          <a class="navbar-item is-size-5 has-text-weight-semibold" href="/logout/">
-            Logout
-          </a>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <!-- END NAV -->
-  {{{body}}}
+          </div> }}
+                        <a
+                            class="navbar-item is-active is-size-5 has-text-weight-semibold"
+                            href="/"
+                        >
+                            Home
+                        </a>
+                        <a
+                            class="navbar-item is-size-5 has-text-weight-semibold"
+                            href="/dashboard"
+                        >
+                            Dashboard
+                        </a>
+                        <a
+                            class="navbar-item is-size-5 has-text-weight-semibold"
+                            href="/login/"
+                        >
+                            Login
+                        </a>
+                        <a
+                            class="navbar-item is-size-5 has-text-weight-semibold"
+                            href="/signup/"
+                        >
+                            Sign up?
+                        </a>
+                        <a
+                            class="navbar-item is-size-5 has-text-weight-semibold"
+                            href="/logout/"
+                        >
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- END NAV -->
+        {{{body}}}
 
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p>
-        <strong>Cool Tech Blog Full Stack App</strong> - <a href="https://github.com/DavidTunnell/fullstack-mvc-tech-blog-node-express-mysql-handlebars-authentication" target="_blank">Open Source</a> - Node.js, Express.js, Handlebars.js, Sequelize.js, MVC, MySQL, Bulma
-      </p>
-    </div>
-  </footer>
-  <script src='/js/main.js'></script>
-</body>
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <p>
+                    <strong>Cool Tech Blog Full Stack App</strong>
+                    -
+                    <a
+                        href="https://github.com/DavidTunnell/fullstack-mvc-tech-blog-node-express-mysql-handlebars-authentication"
+                        target="_blank"
+                    >Open Source</a>
+                    - Node.js, Express.js, Handlebars.js, Sequelize.js, MVC,
+                    MySQL, Bulma
+                </p>
+            </div>
+        </footer>
+        <script src="/js/main.js"></script>
+    </body>
 
 </html>
