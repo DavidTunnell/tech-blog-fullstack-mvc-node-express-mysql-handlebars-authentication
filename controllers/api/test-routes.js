@@ -1,8 +1,7 @@
-const router = require('express').Router();
-const { Test } = require('../../models');
+const router = require("express").Router();
+const { Test } = require("../../models");
 
-router.get('/', async(req, res) => {
-    // find all categories and associated products
+router.get("/", async (req, res) => {
     try {
         const testData = await Test.findAll();
         res.status(200).json(testData);

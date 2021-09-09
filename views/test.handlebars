@@ -1,27 +1,30 @@
 <div>
-  <div>
-    <h1>Directly from DB</h1>
-    {{id}}
-    and
-    {{test_name}}
-  </div>
-  <div>
-    <h1>Directly from DB All with handlebars helper</h1>
-      {{#each tests as |test|}}
-  <div class="dish col-md-4">
-    <p>
-      {{test.id}}.
-      {{test.test_name}}
-    </p>
-  </div>
-  {{/each}}
-  </div>
+    <div>
+        <h1>Directly from DB</h1>
+        {{id}}
+        and
+        {{test_name}}
+        and
+        {{createdAt}}
+    </div>
+    <div>
+        <h1>Directly from DB All with handlebars helper</h1>
+        {{#each tests as |test|}}
+            <div class="dish col-md-4">
+                <p>
+                    {{test.id}}.
+                    {{test.test_name}}
+                    TEST:
+                    {{format_time test.createdAt}}
+                </p>
+            </div>
+        {{/each}}
+    </div>
 
-  <div>
-    <h1>Called via API</h1>
-    <p class="myTest"></p>
-  </div>
-
+    <div>
+        <h1>Called via API</h1>
+        <p class="myTest"></p>
+    </div>
 
 </div>
-<script src='/js/test.js'></script>
+<script src="/js/test.js"></script>
