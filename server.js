@@ -1,6 +1,7 @@
 // Dependencies
 const express = require("express");
 const expressHandlebars = require("express-handlebars");
+const session = require("express-session");
 const path = require("path");
 const sequelize = require("./config/connection");
 const controllers = require("./controllers");
@@ -12,6 +13,14 @@ const handlebars = expressHandlebars.create({ helpers });
 // Sets up the Express App
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+// Set up sessions
+const sess = {
+    secret: "Secret key goes here",
+    resave: false,
+    saveUninitialized: false,
+};
+app.use(session(sess));
 
 //setup handlebars with express
 app.engine("handlebars", handlebars.engine);

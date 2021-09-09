@@ -4,34 +4,34 @@ A full stack blog project. [Live Demo Here](https://www.heroku.com).
 
 Features:
 
-* A homepage that showcases existing blog posts. 
-* A navigation bar serving express routes.
-* A dashboard to create, read, update and delete blog posts for the admin.
-* Individual pages for users to create accounts, login and logout using the site using authentication. ***
-* The ability for users comment on blog posts.
-* An auto timeout logout where after a certain amount of time the user will need to login again for certain actions (add, update, delete, comments). ***
-* Role based authorization/security for parts of the application***
-* Client-side API consumption and AJAX DOM manipulation.
-* An API that serves JSON via Database.
-* A Templated view engine for reusable code.
-* A Modern responsive interface design.
-* An Automated database schema generation and seed data (and a SQL script to generate the database itself).
+-   A homepage that showcases existing blog posts.
+-   A navigation bar serving express routes.
+-   A dashboard to create, read, update and delete blog posts for the admin.
+-   Individual pages for users to create accounts, login and logout using the site using authentication. \*\*\*
+-   The ability for users comment on blog posts.
+-   An auto timeout logout where after a certain amount of time the user will need to login again for certain actions (add, update, delete, comments). \*\*\*
+-   Role based authorization/security for parts of the application\*\*\*
+-   Client-side API consumption and AJAX DOM manipulation.
+-   An API that serves JSON via Database.
+-   A Templated view engine for reusable code.
+-   A Modern responsive interface design.
+-   An Automated database schema generation and seed data (and a SQL script to generate the database itself).
 
-This project uses the following technologies/methodologies. 
+This project uses the following technologies/libraries.
 
-* [MVC Architecture](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)
-* Designed with Extensibility in Mind (Notice the Controller Routes, Client-Side JavaScript and Handlebar Views)
-* [Node.js](https://nodejs.org/en/) and [Express.js](https://expressjs.com/) as the Server for API and HTTP requests
-* Custom [MySQL](https://www.mysql.com/) Database Schema
-* [Sequelize.js](https://sequelize.org/) for [Object Relational Mapping](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping), Database Interaction, [Routing](https://expressjs.com/en/guide/routing.html) and Schema Generation and Seeding
-* [Dotenv](https://www.npmjs.com/package/dotenv) for Database Connection Settings
-* [Handlebars.js](https://handlebarsjs.com/) for Dynamic View Templating and Server Side HTML Rendering
-* [Bulma](https://bulma.io/) and the [Blog 2 Template](https://github.com/BulmaTemplates/bulma-templates/blob/master/templates/blog-tailsaw.html) as a CSS Style Framework
-* [Nodemon](https://www.npmjs.com/package/nodemon) for Easier Server Development
-* [Heroku](https://www.heroku.com) for Demo Deployment
-* ADD UNIT TESTS????
+-   [MVC Architecture](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)
+-   Designed with Extensibility in Mind (Notice the Controller Routes, Client-Side JavaScript and Handlebar Views)
+-   [Node.js](https://nodejs.org/en/) and [Express.js](https://expressjs.com/) as the Server for API and HTTP requests
+-   Custom [MySQL](https://www.mysql.com/) Database Schema
+-   [Sequelize.js](https://sequelize.org/) for [Object Relational Mapping](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping), Database Interaction, [Routing](https://expressjs.com/en/guide/routing.html) and Schema Generation and Seeding
+-   [Dotenv](https://www.npmjs.com/package/dotenv) for Database Connection Settings
+-   [Handlebars.js](https://handlebarsjs.com/) for Dynamic View Templating and Server Side HTML Rendering
+-   [Bulma](https://bulma.io/) and the [Blog 2 Template](https://github.com/BulmaTemplates/bulma-templates/blob/master/templates/blog-tailsaw.html) as a CSS Style Framework
+-   [Nodemon](https://www.npmjs.com/package/nodemon) for Easier Server Development
+-   [Heroku](https://www.heroku.com) for Demo Deployment
+-   ADD UNIT TESTS????
 
-* todo: the [bcrypt package](https://www.npmjs.com/package/bcrypt) to hash passwords, and the [express-session](https://www.npmjs.com/package/express-session) and [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize) packages to add authentication.
+-   todo: the [bcrypt package](https://www.npmjs.com/package/bcrypt) to hash passwords, and the [express-session](https://www.npmjs.com/package/express-session) and [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize) packages to add authentication.
 
 The project uses [Node.js](https://nodejs.org/en/) and [Express.js](https://expressjs.com/) as its server along with [Handlebars.js](https://handlebarsjs.com/) as its view/templating engine. The file to run it is `./server.js`. More details in the installation section. The ar
 
@@ -53,20 +53,17 @@ The project uses [Node.js](https://nodejs.org/en/) and [Express.js](https://expr
 
 ### Logout
 
-
 ==========================
 
 //add partials -maybe for each blog sub post or each comment - DONE
 
-//also custom helper function for dates (like in activities) - look at server.js where they add and use custom helpers also - 
+//also custom helper function for dates (like in activities) - look at server.js where they add and use custom helpers also - DONE
 
-//add sessions, this is for accounts i believe - activity 15 server.js shows adding express-session and setup and home-routes.js -> req.session.save function -- activity 15/16 has login logic with sessions and a login page to look at API/user-routes and the DB too for user tables, USER MODEL -- look at if logged in on gallery.handlebars (this can be used to show different content based on whether the user is logged in)
+//add sessions, this is for accounts i believe - activity 15 server.js shows adding express-session and setup and home-routes.js -> req.session.save function -- activity 15/16 has login logic with sessions and a for user tables, USER MODEL - DONE
 
-//add cookies... 16/17 activities, connect-session-sequelize on server.js also also the session has a cookie attribute -- max age is how long you stay logged in via cookie client side once the session checks it -- look at both ins and stu to see code -- 
+//add cookies... 16/17 activities, connect-session-sequelize on server.js also also the session has a cookie attribute -- max age is how long you stay logged in via cookie client side once the session checks it -- look at both ins and stu to see code -- -- look at if logged in on gallery.handlebars (this can be used to show different content based on whether the user is logged in) ---login page to look at API/user-routes and the DB too
 
 //add middleware (just the logic in the controller to control what happens) -- use it so if not logged in forward the user to the login page, in teh controller instead of the way in sessions above ^ (gallery.handlebars)
-
-
 
 //quality readme - url to repo
 //project comments
@@ -84,11 +81,11 @@ The project uses [Node.js](https://nodejs.org/en/) and [Express.js](https://expr
 ## Acceptance Criteria
 
 ```md
-GIVEN a CMS-style blog site *
+GIVEN a CMS-style blog site _
 WHEN I visit the site for the first time
 THEN I am presented with the homepage, which includes existing blog posts if any have been posted; navigation links for the homepage and the dashboard; and the option to log in
-WHEN I click on the homepage option *
-THEN I am taken to the homepage *
+WHEN I click on the homepage option _
+THEN I am taken to the homepage \*
 
 WHEN I click on any other links in the navigation
 THEN I am prompted to either sign up or sign in

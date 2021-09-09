@@ -7,8 +7,18 @@ router.get("/", async (req, res) => {
         res.json(err);
     });
     const tests = testData.map((test) => test.get({ plain: true }));
-    console.log(tests);
-    res.render("test", { tests });
+
+    req.session.save(() => {
+        // We set up a session variable to count the number of times we visit the homepage
+        if (req.session.countVisit) {
+            // If the 'countVisit' session variable already exists, increment it by 1
+            req.session.countVisit++;
+        } else {
+            // If the 'countVisit' session variable doesn't exist, set it to 1
+            req.session.countVisit = 1;
+        }
+        res.render("test", { tests, myTest: req.session.countVisit });
+    });
 });
 
 //dont do this, use API
