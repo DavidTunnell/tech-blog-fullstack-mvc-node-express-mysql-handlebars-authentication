@@ -63,6 +63,11 @@ The project uses [Node.js](https://nodejs.org/en/) and [Express.js](https://expr
 
 //add cookies... 16/17 activities, connect-session-sequelize on server.js also also the session has a cookie attribute -- max age is how long you stay logged in via cookie client side once the session checks it -- look at both ins and stu to see code -- -- look at if logged in on gallery.handlebars (this can be used to show different content based on whether the user is logged in) ---login page to look at API/user-routes and the DB too
 
+ADD CREATE ACCOUNT TO FRONT END USING API
+ --- C:\UNC Coding Bootcamp\fullstack-may-2021\14-MVC\01-Activities\17-Ins_Cookies\public\js\login.js continue HERE!!!!!!!!!!!!
+
+
+
 //add middleware (just the logic in the controller to control what happens) -- use it so if not logged in forward the user to the login page, in teh controller instead of the way in sessions above ^ (gallery.handlebars)
 
 //quality readme - url to repo

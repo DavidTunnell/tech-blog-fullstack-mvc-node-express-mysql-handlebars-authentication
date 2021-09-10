@@ -17,7 +17,11 @@ router.get("/", async (req, res) => {
             // If the 'countVisit' session variable doesn't exist, set it to 1
             req.session.countVisit = 1;
         }
-        res.render("test", { tests, myTest: req.session.countVisit });
+        res.render("test", {
+            tests,
+            myTest: req.session.countVisit,
+            loggedIn: req.session.loggedIn,
+        });
     });
 });
 
@@ -31,7 +35,7 @@ router.get("/:id", async (req, res) => {
             return;
         }
         const test = testData.get({ plain: true });
-        res.render("test", test);
+        res.render("test", { test, loggedIn: req.session.loggedIn });
     } catch (err) {
         res.status(500).json(err);
     }

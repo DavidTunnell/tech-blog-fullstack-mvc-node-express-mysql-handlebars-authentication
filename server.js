@@ -3,6 +3,7 @@ const express = require("express");
 const expressHandlebars = require("express-handlebars");
 const session = require("express-session");
 const path = require("path");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const sequelize = require("./config/connection");
 const controllers = require("./controllers");
 // Import the custom helper methods
@@ -17,8 +18,15 @@ const PORT = process.env.PORT || 3001;
 // Set up sessions
 const sess = {
     secret: "Secret key goes here",
+    cookie: {
+        // Stored in milliseconds (86,400,000 === 1 day)
+        maxAge: 10000000,
+    },
     resave: false,
     saveUninitialized: false,
+    store: new SequelizeStore({
+        db: sequelize,
+    }),
 };
 app.use(session(sess));
 
