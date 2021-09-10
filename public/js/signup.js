@@ -11,11 +11,19 @@ const signupFormHandler = async (event) => {
             body: JSON.stringify({ username, email, password }),
             headers: { "Content-Type": "application/json" },
         });
+        console.log(response);
         if (response.ok) {
             document.location.replace("/");
         } else {
-            alert("Failed to sign up.");
+            alert(
+                "Failed to sign up. " +
+                    response.status +
+                    ": " +
+                    response.statusText
+            );
         }
+    } else {
+        alert("Please fill out all fields.");
     }
 };
 

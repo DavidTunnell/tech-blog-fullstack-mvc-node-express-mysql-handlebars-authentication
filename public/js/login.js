@@ -18,31 +18,18 @@ const loginFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace("/");
         } else {
-            //TODO add on page validation
-            alert("Failed to log in.");
+            alert(
+                "Failed to login. " +
+                    response.status +
+                    ": " +
+                    response.statusText
+            );
         }
+    } else {
+        alert("Please fill out all fields.");
     }
 };
 
 document
     .querySelector(".login-button")
     .addEventListener("click", loginFormHandler);
-
-// async function getTests() {
-//     const url = `${apiUrl}/api/test/`;
-//     let response = await fetch(url);
-//     let data = await response.json();
-//     return data;
-// }
-
-// async function renderTests() {
-//     const tests = await getTests();
-//     let html = "<ul>";
-//     tests.forEach((test) => {
-//         html += "<li>" + test.test_name + "</li>";
-//     });
-//     html += "</ul>";
-//     testParagraphTag.innerHTML = html;
-// }
-
-// renderTests();
