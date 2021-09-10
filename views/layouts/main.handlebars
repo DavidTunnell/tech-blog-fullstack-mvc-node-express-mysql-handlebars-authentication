@@ -40,44 +40,41 @@
                 </div>
                 <div id="navbarMenu" class="navbar-menu">
                     <div class="navbar-end">
-                        {{! <div class=" navbar-item">
-            <div class="control has-icons-left">
-              <input class="input is-rounded" type="email" placeholder="Search">
-              <span class="icon is-left">
-                <i class="fa fa-search"></i>
-              </span>
-            </div>
-          </div> }}
                         <a
                             class="navbar-item is-active is-size-5 has-text-weight-semibold"
                             href="/"
                         >
                             Home
                         </a>
-                        <a
-                            class="navbar-item is-size-5 has-text-weight-semibold"
-                            href="/dashboard"
-                        >
-                            Dashboard
-                        </a>
-                        <a
-                            class="navbar-item is-size-5 has-text-weight-semibold"
-                            href="/login/"
-                        >
-                            Login
-                        </a>
-                        <a
-                            class="navbar-item is-size-5 has-text-weight-semibold"
-                            href="/signup/"
-                        >
-                            Sign up?
-                        </a>
-                        <a
-                            class="navbar-item is-size-5 has-text-weight-semibold"
-                            href="/logout/"
-                        >
-                            Logout
-                        </a>
+                        {{#if loggedIn}}
+                            <a
+                                class="navbar-item is-size-5 has-text-weight-semibold"
+                                href="/dashboard"
+                            >
+                                Dashboard
+                            </a>
+                            <a
+                                class="navbar-item is-size-5 has-text-weight-semibold"
+                                href="/logout/"
+                            >
+                                Logout
+                            </a>
+                        {{else}}
+
+                            <a
+                                class="navbar-item is-size-5 has-text-weight-semibold"
+                                href="/login/"
+                            >
+                                Login
+                            </a>
+                            <a
+                                class="navbar-item is-size-5 has-text-weight-semibold"
+                                href="/signup/"
+                            >
+                                Signup
+                            </a>
+                        {{/if}}
+
                     </div>
                 </div>
             </div>

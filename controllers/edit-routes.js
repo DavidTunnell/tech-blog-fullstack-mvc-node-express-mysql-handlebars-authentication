@@ -1,7 +1,7 @@
-const router = require('express').Router();
+const router = require("express").Router();
 
-router.get('/', async(req, res) => {
-    res.render('edit');
+router.get("/", async (req, res) => {
+    res.render("edit", { loggedIn: req.session.loggedIn });
 });
 
 module.exports = router;
