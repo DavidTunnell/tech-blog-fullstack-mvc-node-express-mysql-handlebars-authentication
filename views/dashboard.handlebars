@@ -56,23 +56,30 @@
                                 <tr>
                                     <th class="table-id">ID</th>
                                     <th class="table-title">Title</th>
+                                    <th class="table-author">Author</th>
+                                    <th class="table-created">Created</th>
                                     <th class="table-edit">Edit</th>
                                     <th class="table-delete">Delete</th>
                                 </tr>
                             </thead>
+
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td><a href="/post">Programming is cool</a></td>
-                                    <td><a href="/edit">Edit</a></td>
-                                    <td><a href="/delete">Delete</a></td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td><a href="/post">Yes it is!!</a></td>
-                                    <td><a href="/edit">Edit</a></td>
-                                    <td><a href="/delete">Delete</a></td>
-                                </tr>
+                                {{#each posts}}
+                                    <tr>
+                                        <td>{{this.id}}</td>
+                                        <td><a
+                                                href="/post/{{this.id}}"
+                                            >{{this.title}}</a></td>
+                                        <td>{{this.user.username}}</td>
+                                        <td>{{format_time this.createdAt}}</td>
+                                        <td><a
+                                                href="/edit/{{this.id}}"
+                                            >Edit</a></td>
+                                        <td><a
+                                                href="/delete/{{this.id}}"
+                                            >Delete</a></td>
+                                    </tr>
+                                {{/each}}
                             </tbody>
                         </table>
                     </form>
