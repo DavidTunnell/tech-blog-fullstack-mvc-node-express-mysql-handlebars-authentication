@@ -4,7 +4,6 @@ const { User } = require("../../models");
 // CREATE new user
 router.post("/", async (req, res) => {
     try {
-        // res.setHeader("Content-Type", "application/json");
         const dbUserData = await User.create({
             username: req.body.username,
             email: req.body.email,
@@ -12,6 +11,7 @@ router.post("/", async (req, res) => {
         });
         req.session.save(() => {
             req.session.loggedIn = true;
+            req.session.loggedInUserData = dbUserData;
             return res.status(200).json(dbUserData);
         });
     } catch (err) {
@@ -47,6 +47,7 @@ router.post("/login", async (req, res) => {
 
         req.session.save(() => {
             req.session.loggedIn = true;
+            req.session.loggedInUserData = dbUserData;
             console.log("🚀", req.session.cookie);
 
             res.status(200).json({

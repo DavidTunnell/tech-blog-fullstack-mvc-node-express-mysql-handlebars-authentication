@@ -4,7 +4,10 @@ router.get("/", async (req, res) => {
     if (!req.session.loggedIn) {
         res.redirect("/login");
     } else {
-        res.render("dashboard", { loggedIn: req.session.loggedIn });
+        res.render("dashboard", {
+            loggedIn: req.session.loggedIn,
+            loggedInUserData: req.session.loggedInUserData,
+        });
     }
 });
 

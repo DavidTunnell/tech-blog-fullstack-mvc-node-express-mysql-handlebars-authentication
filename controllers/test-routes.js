@@ -17,10 +17,12 @@ router.get("/", async (req, res) => {
             // If the 'countVisit' session variable doesn't exist, set it to 1
             req.session.countVisit = 1;
         }
+        console.log(req.session.loggedInUserData);
         res.render("test", {
             tests,
             myTest: req.session.countVisit,
             loggedIn: req.session.loggedIn,
+            loggedInUserData: req.session.loggedInUserData,
         });
     });
 });

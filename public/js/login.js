@@ -1,13 +1,12 @@
-const testParagraphTag = document.querySelector(".myTest");
+// const testParagraphTag = document.querySelector(".myTest");
 
-const apiUrl = getApiUrl();
+// const apiUrl = getApiUrl();
 
 const loginFormHandler = async (event) => {
     event.preventDefault();
-
     const email = document.querySelector(".username-input").value.trim();
     const password = document.querySelector(".password-input").value.trim();
-    console.log(JSON.stringify({ email, password }));
+
     if (email && password) {
         const response = await fetch("/api/users/login", {
             method: "POST",

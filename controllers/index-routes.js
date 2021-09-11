@@ -3,8 +3,10 @@ const path = require("path");
 
 router.get("/", async (req, res) => {
     //renders ./views/layouts/home.handlebars
-    console.log(req.session);
-    res.render("index", { loggedIn: req.session.loggedIn });
+    res.render("index", {
+        loggedIn: req.session.loggedIn,
+        loggedInUserData: req.session.loggedInUserData,
+    });
 });
 
 module.exports = router;
