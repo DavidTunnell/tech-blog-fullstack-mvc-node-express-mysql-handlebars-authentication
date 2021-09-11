@@ -31,6 +31,34 @@ const submitPostHandler = async (event) => {
     }
 };
 
+const deletePostHandler = async (event) => {
+    event.preventDefault();
+
+    const deletePostId = event.target.getAttribute("data-id");
+    if (deletePostId) {
+        const response = await fetch("/api/post/" + deletePostId, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+        });
+        if (response.ok) {
+            document.location.replace("/dashboard");
+        } else {
+            alert(
+                "Failed to submit post. " +
+                    response.status +
+                    ": " +
+                    response.statusText
+            );
+        }
+    }
+};
+
 document
     .querySelector(".submit-post")
     .addEventListener("click", submitPostHandler);
+
+const deleteButtons = document.querySelectorAll(".delete-post");
+console.log(deleteButtons);
+deleteButtons.forEach((el) =>
+    el.addEventListener("click", (event) => deletePostHandler(event))
+);
