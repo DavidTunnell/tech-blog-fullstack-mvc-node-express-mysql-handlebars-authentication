@@ -13,11 +13,10 @@ router.get("/", async (req, res) => {
                         attributes: ["id", "username"],
                     },
                 ],
-                order: [["createdAt", "ASC"]],
+                order: [["createdAt", "DESC"]],
             });
 
             const posts = postData.map((post) => post.get({ plain: true }));
-            console.log(posts);
             res.render("dashboard", {
                 loggedIn: req.session.loggedIn,
                 loggedInUserData: req.session.loggedInUserData,

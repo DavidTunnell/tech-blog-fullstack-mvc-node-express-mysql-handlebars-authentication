@@ -2,15 +2,27 @@ const router = require("express").Router();
 const { Post } = require("../../models");
 
 router.post("/", async (req, res) => {
-    console.log("called");
     try {
         const dbPostData = await Post.create({
             title: req.body.title,
             content: req.body.content,
             author_id: req.body.author_id,
         });
-        console.log(dbPostData);
         return res.status(200).json(dbPostData);
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json(err);
+    }
+});
+
+router.put("/:id", async (req, res) => {
+    try {
+        const updateResult = await Post.update(req.body, {
+            where: {
+                id: req.params.id,
+            },
+        });
+        return res.status(200).json(updateResult);
     } catch (err) {
         console.log(err);
         return res.status(500).json(err);
