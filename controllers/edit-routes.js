@@ -16,8 +16,6 @@ const withAuth = require("../utils/auth");
 router.get("/:id", withAuth, async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id);
-        console.log(postData.dataValues);
-
         if (postData) {
             res.render("edit", {
                 loggedIn: req.session.loggedIn,
