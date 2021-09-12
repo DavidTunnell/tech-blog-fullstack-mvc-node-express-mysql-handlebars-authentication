@@ -32,7 +32,6 @@ router.get("/:id", async (req, res) => {
                 },
             ],
         });
-        console.log(postData.dataValues);
         if (postData) {
             res.render("post", {
                 loggedIn: req.session.loggedIn,

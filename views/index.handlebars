@@ -13,11 +13,10 @@
           <div class="columns">
             <div class="column is-8 is-offset-2">
               <div class="content is-medium">
-                <h2 class="subtitle is-4">December 25, 2018 by Username</h2>
-                <h1 class="title"><a href="/post/">Getting Started</a></h1>
-                <p>This is a starter template for creating a beautiful, customizable blog with minimal
-                  effort. You’ll only have to change a few settings and you’re ready to go. As with all Jigsaw sites,
-                  configuration settings can be found in config</p>
+                <h2 class="subtitle is-4">{{format_time posts.0.0.createdAt}}</h2>
+                <h1 class="title"><a href="/post/">{{posts.0.0.title}}</a></h1>
+                <h6>by {{posts.0.0.user.username}}</h6>
+                <p>{{posts.0.0.content}}</p>
               </div>
             </div>
           </div>
@@ -30,8 +29,13 @@
   <section class="hero ">
     <div class="hero-body">
       <div class="container">
-        {{> post-summary}}
-        {{> post-summary}}
+        {{#each posts as |post|}}
+          {{#if @first}}
+            <!-- Don't post 1st one because it goes up top -->
+          {{else}}
+            {{> post-summary}}
+          {{/if}}
+        {{/each}}
       </div>
     </div>
   </section>
