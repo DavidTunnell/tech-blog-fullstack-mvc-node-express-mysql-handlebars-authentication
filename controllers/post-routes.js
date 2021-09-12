@@ -18,12 +18,18 @@ router.get("/:id", async (req, res) => {
             },
             include: [
                 {
+                    model: Comment,
+                    include: [
+                        {
+                            model: User,
+                            attributes: ["id", "username"],
+                        },
+                    ],
+                },
+                {
                     model: User,
                     attributes: ["id", "username"],
                 },
-                // {
-                //     model: Comment,
-                // },
             ],
         });
         console.log(postData.dataValues);

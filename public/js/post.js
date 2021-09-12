@@ -18,7 +18,10 @@ const submitCommentHandler = async (event) => {
                 headers: { "Content-Type": "application/json" },
             });
             if (response.ok) {
-                document.location.replace("/post/" + post_id);
+                document.location.replace(
+                    "/post/" + post_id + "#comment-section"
+                );
+                document.location.reload();
             } else {
                 alert(
                     "Failed to submit comment. " +

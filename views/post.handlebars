@@ -1,61 +1,68 @@
-<section class="hero ">
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns">
-        <div class="column is-8 is-offset-2">
-          <figure class="image is-16by9">
-            <img src="../images/first-post.png" alt="">
-          </figure>
-        </div>
-      </div>
-      <section class="section">
-        <div class="columns">
-          <div class="column is-8 is-offset-2">
-            <div class="content is-medium">
-              <h2 class="subtitle is-4">{{format_time postData.createdAt}}</h2>
-              <h1 class="title">{{postData.title}}</h1>
-              <h6>by {{postData.user.dataValues.username}}</h6>
-              <p>{{postData.content}}</p>
+<section class="hero">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8 is-offset-2">
+                    <figure class="image is-16by9">
+                        <img src="../images/first-post.png" alt="" />
+                    </figure>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
-      <div class="is-divider"></div>
-      <div class="column is-8 is-offset-2">
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label">Comment:</label>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control">
-                <textarea class="textarea comment-input" placeholder="What are your thoughts on this blog post?"></textarea>
-              </div>
+            <section class="section">
+                <div class="columns">
+                    <div class="column is-8 is-offset-2">
+                        <div class="content is-medium">
+                            <h2 class="subtitle is-4">{{format_time
+                                    postData.createdAt
+                                }}</h2>
+                            <h1 class="title">{{postData.title}}</h1>
+                            <h6>by {{postData.user.dataValues.username}}</h6>
+                            <p>{{postData.content}}</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="is-divider"></div>
+            <div class="column is-8 is-offset-2">
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Comment:</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                                <textarea
+                                    class="textarea comment-input"
+                                    placeholder="What are your thoughts on this blog post?"
+                                ></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label">
+                        <!-- Left empty for spacing -->
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                                <button
+                                    class="button is-success comment-submit"
+                                >
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="field is-horizontal">
-          <div class="field-label">
-            <!-- Left empty for spacing -->
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control">
-                <button class="button is-success comment-submit">
-                  Submit
-                </button>
-              </div>
+            <div class="column is-8 is-offset-2" id="comment-section">
+                {{#each postData.comments as |cmt|}}
+                    {{> comment}}
+                {{/each}}
             </div>
-          </div>
         </div>
-      </div>
-      <div class="column is-8 is-offset-2">
-        {{> comment}}
-        {{> comment}}
-        {{> comment}}
-      </div>
     </div>
-  </div>
-  <div class="current-post-id is-invisible">{{postData.id}}</div>
+    <div class="current-post-id is-invisible">{{postData.id}}</div>
 </section>
 <script src="/js/post.js"></script>
