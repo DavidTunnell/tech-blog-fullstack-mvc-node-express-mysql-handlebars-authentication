@@ -34,6 +34,7 @@ router.get("/", async (req, res) => {
                 currentPackage = [];
             }
         }
+        console.log(packagedPosts);
         res.render("index", {
             loggedIn: req.session.loggedIn,
             loggedInUserData: req.session.loggedInUserData,

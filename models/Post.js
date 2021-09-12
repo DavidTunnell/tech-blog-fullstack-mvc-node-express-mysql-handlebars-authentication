@@ -21,7 +21,7 @@ Post.init(
             allowNull: false,
         },
         content: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(10000),
             allowNull: false,
         },
         author_id: {
