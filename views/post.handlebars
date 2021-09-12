@@ -29,7 +29,7 @@
           <div class="field-body">
             <div class="field">
               <div class="control">
-                <textarea class="textarea" placeholder="What are your thoughts on this blog post?"></textarea>
+                <textarea class="textarea comment-input" placeholder="What are your thoughts on this blog post?"></textarea>
               </div>
             </div>
           </div>
@@ -41,7 +41,7 @@
           <div class="field-body">
             <div class="field">
               <div class="control">
-                <button class="button is-success">
+                <button class="button is-success comment-submit">
                   Submit
                 </button>
               </div>
@@ -56,4 +56,6 @@
       </div>
     </div>
   </div>
+  <div class="current-post-id is-invisible">{{postData.id}}</div>
 </section>
+<script src="/js/post.js"></script>
