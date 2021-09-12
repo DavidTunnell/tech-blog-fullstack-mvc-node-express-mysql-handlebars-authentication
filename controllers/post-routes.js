@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const Post = require("../models/Post");
 const User = require("../models/User");
+const Comment = require("../models/Comment");
 
 // router.get("/", async (req, res) => {
 //     res.render("post", {
@@ -20,6 +21,9 @@ router.get("/:id", async (req, res) => {
                     model: User,
                     attributes: ["id", "username"],
                 },
+                // {
+                //     model: Comment,
+                // },
             ],
         });
         console.log(postData.dataValues);

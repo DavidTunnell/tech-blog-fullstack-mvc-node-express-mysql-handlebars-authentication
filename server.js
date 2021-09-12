@@ -11,6 +11,8 @@ const helpers = require("./utils/helpers");
 // Incorporate the custom helper methods:P ./utils/helpers.js
 const handlebars = expressHandlebars.create({ helpers });
 
+// const Comment = require("./models/Comment");
+
 // Sets up the Express App
 const app = express();
 const PORT = process.env.PORT || 3001;
