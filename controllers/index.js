@@ -2,7 +2,6 @@ const router = require('express').Router();
 
 const apiRoutes = require('./api');
 const indexRoutes = require('./index-routes');
-const testRoutes = require('./test-routes');
 const loginRoutes = require('./login-routes');
 const postRoutes = require('./post-routes');
 const signupRoutes = require('./signup-routes');
@@ -11,7 +10,6 @@ const dashboardRoutes = require('./dashboard-routes');
 const editRoutes = require('./edit-routes');
 
 router.use('/', indexRoutes);
-router.use('/test', testRoutes);
 router.use('/api', apiRoutes);
 router.use('/login', loginRoutes);
 router.use('/post', postRoutes);
