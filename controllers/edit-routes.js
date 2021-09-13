@@ -16,11 +16,12 @@ const withAuth = require("../utils/auth");
 router.get("/:id", withAuth, async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id);
-        if (postData) {
+        const post = postData.get({ plain: true });
+        if (post) {
             res.render("edit", {
                 loggedIn: req.session.loggedIn,
                 loggedInUserData: req.session.loggedInUserData,
-                postData: postData.dataValues,
+                postData: post,
             });
         } else {
             res.redirect("/dashboard");

@@ -32,11 +32,12 @@ router.get("/:id", async (req, res) => {
                 },
             ],
         });
-        if (postData) {
+        const post = postData.get({ plain: true });
+        if (post) {
             res.render("post", {
                 loggedIn: req.session.loggedIn,
                 loggedInUserData: req.session.loggedInUserData,
-                postData: postData.dataValues,
+                postData: post,
             });
         } else {
             res.redirect("/");

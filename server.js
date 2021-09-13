@@ -11,8 +11,6 @@ const helpers = require("./utils/helpers");
 // Incorporate the custom helper methods:P ./utils/helpers.js
 const handlebars = expressHandlebars.create({ helpers });
 
-// const Comment = require("./models/Comment");
-
 // Sets up the Express App
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -22,7 +20,8 @@ const sess = {
     secret: "Secret key goes here",
     cookie: {
         // Stored in milliseconds (86,400,000 === 1 day)
-        maxAge: 10000000,
+        //28800000 = 8 hours
+        maxAge: 28800000,
     },
     resave: false,
     saveUninitialized: false,

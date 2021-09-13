@@ -1,41 +1,61 @@
 # Tech Blog - MVC, Node.js, Express.js, Handlebars.js, MySQL, Bulma
 
-A full stack blog project. [Live Demo Here](https://www.heroku.com).
+An MVC full stack blog project. [Live Demo Here](https://www.heroku.com).
 
 Features:
 
 -   A homepage that showcases existing blog posts.
 -   A navigation bar serving express routes.
 -   A dashboard to create, read, update and delete blog posts for the admin.
--   Individual pages for users to create accounts, login and logout using the site using authentication. \*\*\*
+-   Individual pages for users to create accounts, login and logout using the site using authentication.
 -   The ability for users comment on blog posts.
--   An auto timeout logout where after a certain amount of time the user will need to login again for certain actions (add, update, delete, comments). \*\*\*
--   Role based authorization/security for parts of the application\*\*\*
+-   An auto timeout logout where after a certain amount of time the user will need to login again for certain actions (add, update, delete, comments).
+-   Sessions and Cookie based authorization/security for parts of the application
 -   Client-side API consumption and AJAX DOM manipulation.
 -   An API that serves JSON via Database.
 -   A Templated view engine for reusable code.
 -   A Modern responsive interface design.
 -   An Automated database schema generation and seed data (and a SQL script to generate the database itself).
+-   A Highly Modular MVC Design for Extensibility.
+-   Optional API URL Generator for external API consumption.
+-   Authentication Middleware for Routing Stack.
+-   Modular Layout with a Main and Partial Template Usage
 
 This project uses the following technologies/libraries.
 
--   [MVC Architecture](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)
--   Designed with Extensibility in Mind (Notice the Controller Routes, Client-Side JavaScript and Handlebar Views)
+-   [MVC Architecture](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) - Designed with Extensibility in Mind (Notice the Controller Routes, Client-Side JavaScript and Handlebar Views)
 -   [Node.js](https://nodejs.org/en/) and [Express.js](https://expressjs.com/) as the Server for API and HTTP requests
--   Custom [MySQL](https://www.mysql.com/) Database Schema
+-   [MySQL](https://www.mysql.com/) Database Schema
 -   [Sequelize.js](https://sequelize.org/) for [Object Relational Mapping](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping), Database Interaction, [Routing](https://expressjs.com/en/guide/routing.html) and Schema Generation and Seeding
 -   [Dotenv](https://www.npmjs.com/package/dotenv) for Database Connection Settings
 -   [Handlebars.js](https://handlebarsjs.com/) for Dynamic View Templating and Server Side HTML Rendering
+-   [Bcrypt Package](https://www.npmjs.com/package/bcrypt) for Password Hashing and Management
+-   [Express-Session](https://www.npmjs.com/package/express-session) and [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize) for Session and Cookie Management
 -   [Bulma](https://bulma.io/) and the [Blog 2 Template](https://github.com/BulmaTemplates/bulma-templates/blob/master/templates/blog-tailsaw.html) as a CSS Style Framework
--   [Nodemon](https://www.npmjs.com/package/nodemon) for Easier Server Development
+-   [Nodemon](https://www.npmjs.com/package/nodemon) for Easier Server-Side Development
 -   [Heroku](https://www.heroku.com) for Demo Deployment
--   ADD UNIT TESTS????
 
--   todo: the [bcrypt package](https://www.npmjs.com/package/bcrypt) to hash passwords, and the [express-session](https://www.npmjs.com/package/express-session) and [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize) packages to add authentication.
+## Project Structure
 
-The project uses [Node.js](https://nodejs.org/en/) and [Express.js](https://expressjs.com/) as its server along with [Handlebars.js](https://handlebarsjs.com/) as its view/templating engine. The file to run it is `./server.js`. More details in the installation section. The ar
+The structure was designed as rather modular for extensibility. This might be overboard for some but it is designed so this project can be used to kick off larger scale projects.
+
+The `assets` folder just contains screenshots for this README. The `config` folder is the Sequelize connection used throughout the server side and uses dotenv for connection properties. The controllers folder holds the routing logic for the API and web app calls. The db folder just contains a script to generate the empty database that is used in this project. The models folder contains each of the models used in the MVC model and is connected to the database via Sequelize. The public folder contains css, images and JavaScript used by the client side application served to the end user's browser. This includes API calls to the RESTful API Node.js Server. This is also where the `./config/apiConfig.js` is if external API calls are needed in the future. The seeds folder contains the JavaScript and JSON to create the database tables and seed them with test data. The utils folder has several server side helpers such as the authentication middleware and a DateTime formatter for rendering in the Handlebars.js views. The views folder contains the Handlebars.js main layout template, child templates, and partials to render in those children. Finally, `./server.js` is the main file to run the server.
 
 ## Installation
+
+First run `npm i` at the project root to get the node project dependencies and then update the file `.env.EXAMPLE` to `.env` and update it with your database credentials. If the database name `blog_db` is changed is also needs to be changed in the `./db/schema.sql` for database generation.
+
+Then run the script to generate the `blog_db` database using the `./db/schema.sql`. Then use command `npm run seed` (notice the various commands available in `package.json`) to generate the tables and example user, post and comment data. Once this is complete use command `npm run dev` if you would like the server to use Nodemon and auto-restart when there are updates to code or `npm run start` for a normal server start.
+
+The application will be available by default at http://localhost:3001/. The RESTful API will also be available to be called independently at http://localhost:3001/api/user/, http://localhost:3001/api/post/, http://localhost:3001/api/comment/.
+
+## Example API Call
+
+POST - http://localhost:3001/api/post/ - `{ "title": "Title of a Blog Post", "content": "Content of a blog post three times. Content of a blog post three times. Content of a blog post three times. ", "author_id": "1" }`
+
+## Schema Diagram
+
+![database schema](./assets/database-schema.png)
 
 ## Screenshots
 
@@ -55,82 +75,7 @@ The project uses [Node.js](https://nodejs.org/en/) and [Express.js](https://expr
 
 ==========================
 
-//add partials -maybe for each blog sub post or each comment - DONE
-
-//also custom helper function for dates (like in activities) - look at server.js where they add and use custom helpers also - DONE
-
-//add sessions, this is for accounts i believe - activity 15 server.js shows adding express-session and setup and home-routes.js -> req.session.save function -- activity 15/16 has login logic with sessions and a for user tables, USER MODEL - DONE
-
-//add cookies... 16/17 activities, connect-session-sequelize on server.js also also the session has a cookie attribute -- max age is how long you stay logged in via cookie client side once the session checks it -- look at both ins and stu to see code -- -- look at if logged in on gallery.handlebars (this can be used to show different content based on whether the user is logged in) ---login page to look at API/user-routes and the DB too
-
-ADD CREATE ACCOUNT TO FRONT END USING API
- --- C:\UNC Coding Bootcamp\fullstack-may-2021\14-MVC\01-Activities\17-Ins_Cookies\public\js\login.js continue HERE!!!!!!!!!!!!
-
-
-
-//add middleware (just the logic in the controller to control what happens) -- use it so if not logged in forward the user to the login page, in teh controller instead of the way in sessions above ^ (gallery.handlebars)
-
 //quality readme - url to repo
 //project comments
 //deployed to heroku - url to application
 // Application loads with no errors. - w2 nu checker
-//use: node/express/handlebars/mysql2?/sequelize/dotenv/express-session/connect-session-sequelize/bcrypt
-
-//table ideas
--Users
--posts - fk users and comments tables
--comments fk posts
-
-=====
-
-## Acceptance Criteria
-
-```md
-GIVEN a CMS-style blog site _
-WHEN I visit the site for the first time
-THEN I am presented with the homepage, which includes existing blog posts if any have been posted; navigation links for the homepage and the dashboard; and the option to log in
-WHEN I click on the homepage option _
-THEN I am taken to the homepage \*
-
-WHEN I click on any other links in the navigation
-THEN I am prompted to either sign up or sign in
-
-WHEN I choose to sign up
-THEN I am prompted to create a username and password
-WHEN I click on the sign-up button
-THEN my user credentials are saved and I am logged into the site
-
-WHEN I revisit the site at a later time and choose to sign in
-THEN I am prompted to enter my username and password
-WHEN I am signed in to the site
-
-THEN I see navigation links for the homepage, the dashboard, and the option to log out
-WHEN I click on the homepage option in the navigation
-THEN I am taken to the homepage and presented with existing blog posts that include the post title and the date created
-
-WHEN I click on an existing blog post
-THEN I am presented with the post title, contents, post creator’s username, and date created for that post and have the option to leave a comment
-
-WHEN I enter a comment and click on the submit button while signed in
-THEN the comment is saved and the post is updated to display the comment, the comment creator’s username, and the date created
-
-WHEN I click on the dashboard option in the navigation
-THEN I am taken to the dashboard and presented with any blog posts I have already created and the option to add a new blog post
-WHEN I click on the button to add a new blog post
-THEN I am prompted to enter both a title and contents for my blog post
-WHEN I click on the button to create a new blog post
-THEN the title and contents of my post are saved and I am taken back to an updated dashboard with my new blog post
-
-WHEN I click on one of my existing posts in the dashboard
-THEN I am able to delete or update my post and taken back to an updated dashboard
-
-WHEN I click on the logout option in the navigation
-THEN I am signed out of the site
-
-WHEN I am idle on the site for more than a set time
-THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
-```
-
-the [bcrypt package](https://www.npmjs.com/package/bcrypt) to hash passwords, and the [express-session](https://www.npmjs.com/package/express-session) and [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize) packages to add authentication.
-
-**Note**: The [express-session](https://www.npmjs.com/package/express-session) package stores the session data on the client in a cookie. When you are idle on the site for more than a set time, the cookie will expire and you will be required to log in again to start a new session. This is the default behavior and you do not have to do anything to your application other than implement the npm package.
