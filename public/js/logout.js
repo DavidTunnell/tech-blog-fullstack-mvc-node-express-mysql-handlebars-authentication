@@ -1,3 +1,4 @@
+//lotout user from client to api
 const logout = async () => {
     const response = await fetch("/api/users/logout", {
         method: "POST",

@@ -6,6 +6,7 @@ const userData = require("./user-seeds.json");
 const postData = require("./post-seeds.json");
 const commentData = require("./comment-seeds.json");
 
+//create tables and seed with test data
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
 

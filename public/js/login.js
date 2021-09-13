@@ -1,7 +1,4 @@
-// const testParagraphTag = document.querySelector(".myTest");
-
-// const apiUrl = getApiUrl();
-
+//try to log user in from client to API
 const loginFormHandler = async (event) => {
     event.preventDefault();
     const email = document.querySelector(".username-input").value.trim();
@@ -29,6 +26,7 @@ const loginFormHandler = async (event) => {
     }
 };
 
+//add event listeners
 document
     .querySelector(".login-button")
     .addEventListener("click", loginFormHandler);

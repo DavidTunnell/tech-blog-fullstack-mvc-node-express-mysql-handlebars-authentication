@@ -1,3 +1,4 @@
+//attempt to sign the user up
 const signupFormHandler = async (event) => {
     event.preventDefault();
 
@@ -26,6 +27,7 @@ const signupFormHandler = async (event) => {
     }
 };
 
+//add event listeners
 document
     .querySelector(".signup-button")
     .addEventListener("click", signupFormHandler);

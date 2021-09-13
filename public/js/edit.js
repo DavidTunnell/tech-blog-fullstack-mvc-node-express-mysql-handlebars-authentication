@@ -1,3 +1,4 @@
+//update post via client by calling api
 const submitPostHandler = async (event) => {
     event.preventDefault();
 
@@ -34,6 +35,7 @@ const submitPostHandler = async (event) => {
     }
 };
 
+//add event listeners
 document
     .querySelector(".edit-submit")
     .addEventListener("click", submitPostHandler);

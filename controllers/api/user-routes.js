@@ -20,7 +20,7 @@ router.post("/", async (req, res) => {
     }
 });
 
-// Login
+// user login
 router.post("/login", async (req, res) => {
     try {
         const dbUserData = await User.findOne({
@@ -35,7 +35,7 @@ router.post("/login", async (req, res) => {
             });
             return;
         }
-
+        //checks that password is valid using custom instance method in ./models/user.js
         const validPassword = await dbUserData.checkPassword(req.body.password);
 
         if (!validPassword) {
@@ -44,7 +44,7 @@ router.post("/login", async (req, res) => {
             });
             return;
         }
-
+        //save data to session for use elsewhere
         req.session.save(() => {
             req.session.loggedIn = true;
             req.session.loggedInUserData = dbUserData;
@@ -61,7 +61,7 @@ router.post("/login", async (req, res) => {
     }
 });
 
-// Logout
+// User Logout
 router.post("/logout", (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {

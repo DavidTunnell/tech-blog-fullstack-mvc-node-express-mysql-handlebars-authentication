@@ -1,5 +1,6 @@
 const router = require("express").Router();
 
+//render handlebars view on page load
 router.get("/", async (req, res) => {
     res.render("logout", {
         loggedIn: req.session.loggedIn,

@@ -2,12 +2,9 @@ const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
 class Post extends Model {
-    // checkPassword(loginPw) {
-    //     return bcrypt.compareSync(loginPw, this.password);
-    // }
 }
 
-//id, title, content, authorId, created_at, updated_at
+//post model, table, object
 Post.init(
     {
         id: {

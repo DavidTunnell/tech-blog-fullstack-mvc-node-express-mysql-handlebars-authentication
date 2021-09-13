@@ -3,13 +3,7 @@ const Post = require("../models/Post");
 const User = require("../models/User");
 const Comment = require("../models/Comment");
 
-// router.get("/", async (req, res) => {
-//     res.render("post", {
-//         loggedIn: req.session.loggedIn,
-//         loggedInUserData: req.session.loggedInUserData,
-//     });
-// });
-
+//on post page load render post data
 router.get("/:id", async (req, res) => {
     try {
         const postData = await Post.findOne({
@@ -19,6 +13,7 @@ router.get("/:id", async (req, res) => {
             include: [
                 {
                     model: Comment,
+                    //join of joined data
                     include: [
                         {
                             model: User,

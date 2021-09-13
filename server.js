@@ -8,7 +8,7 @@ const sequelize = require("./config/connection");
 const controllers = require("./controllers");
 // Import the custom helper methods
 const helpers = require("./utils/helpers");
-// Incorporate the custom helper methods:P ./utils/helpers.js
+// Incorporate the custom helper methods: ./utils/helpers.js
 const handlebars = expressHandlebars.create({ helpers });
 
 // Sets up the Express App
@@ -45,7 +45,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(controllers);
 
 // Starts the server to begin listening with sequelize for db connection
-//force start should be false if using 'npm run seed' to populate and create db
+//force start should be false if using 'npm run seed' to populate and create db as it will recreate tables each server reload
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log("Now listening: " + PORT));
 });

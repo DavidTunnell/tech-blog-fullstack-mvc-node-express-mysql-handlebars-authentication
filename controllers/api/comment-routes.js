@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Comment } = require("../../models");
 
+//create comment
 router.post("/", async (req, res) => {
     try {
         const dbCommentData = await Comment.create({
@@ -15,6 +16,7 @@ router.post("/", async (req, res) => {
     }
 });
 
+//delete comment
 router.delete("/:id", async (req, res) => {
     try {
         const deleteCommentData = await Comment.destroy({
@@ -28,19 +30,5 @@ router.delete("/:id", async (req, res) => {
         return res.status(500).json(err);
     }
 });
-
-// router.put("/:id", async (req, res) => {
-//     try {
-//         const updateResult = await Post.update(req.body, {
-//             where: {
-//                 id: req.params.id,
-//             },
-//         });
-//         return res.status(200).json(updateResult);
-//     } catch (err) {
-//         console.log(err);
-//         return res.status(500).json(err);
-//     }
-// });
 
 module.exports = router;

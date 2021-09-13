@@ -2,9 +2,11 @@ const router = require("express").Router();
 const Post = require("../models/Post");
 const User = require("../models/User");
 
+//on / (index) page load
 router.get("/", async (req, res) => {
     try {
         const postData = await Post.findAll({
+            //joins table
             include: [
                 {
                     model: User,
@@ -15,7 +17,7 @@ router.get("/", async (req, res) => {
         });
 
         const posts = postData.map((post) => post.get({ plain: true }));
-        //package it so that the 1st is along
+        //due to the HTML/CSS template for the blog, package the posts into a custom data structure before sending to be rendered
         const packagedPosts = [];
         let currentPackage = [];
         for (let i = 0; i < posts.length; i++) {
@@ -34,7 +36,7 @@ router.get("/", async (req, res) => {
                 currentPackage = [];
             }
         }
-        console.log(packagedPosts);
+        //render to page and pass variables for handlebars to work with
         res.render("index", {
             loggedIn: req.session.loggedIn,
             loggedInUserData: req.session.loggedInUserData,

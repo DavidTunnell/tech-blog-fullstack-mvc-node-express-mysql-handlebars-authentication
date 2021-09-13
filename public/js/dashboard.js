@@ -1,3 +1,4 @@
+//create post from client to API
 const submitPostHandler = async (event) => {
     event.preventDefault();
 
@@ -31,6 +32,7 @@ const submitPostHandler = async (event) => {
     }
 };
 
+//delete post from client to API
 const deletePostHandler = async (event) => {
     event.preventDefault();
 
@@ -53,6 +55,7 @@ const deletePostHandler = async (event) => {
     }
 };
 
+//add event listeners
 document
     .querySelector(".submit-post")
     .addEventListener("click", submitPostHandler);
