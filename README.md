@@ -87,3 +87,8 @@ POST - http://localhost:3001/api/post/ - `{ "title": "Title of a Blog Post", "co
 
 //deployed to heroku - url to application
 // Application loads with no errors. - w2 nu checker
+//eslist validation
+//w2 nu checker
+//- YT vid for understanding cookies and sessions especially related to express if possible
+//reverse order of comments on page with sequelize joins/order syntax correctly
+//add screenshots to readme.
