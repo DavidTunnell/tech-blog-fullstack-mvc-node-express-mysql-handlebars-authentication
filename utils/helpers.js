@@ -10,4 +10,12 @@ module.exports = {
             minute: "numeric",
         });
     },
+    //cuts the length of blog content down for front page/index
+    format_summary: (content) => {
+        if (content.length > 300) {
+            return content.substring(0, 300) + "...";
+        } else {
+            return content;
+        }
+    },
 };

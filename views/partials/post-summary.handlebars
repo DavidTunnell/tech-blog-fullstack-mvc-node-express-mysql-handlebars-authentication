@@ -8,7 +8,7 @@
                 <h1 class="title has-text-black is-3"><a
                         href="/post/{{0.id}}"
                     >{{0.title}}</a></h1>
-                <p class="has-text-dark">{{0.content}}</p>
+                <p class="has-text-dark">{{format_summary 0.content}}</p>
             </div>
         </div>
         {{#if 1.title}}
@@ -20,7 +20,7 @@
                     <h1 class="title has-text-black is-3"><a
                             href="/post/{{1.id}}"
                         >{{1.title}}</a></h1>
-                    <p class="has-text-dark">{{1.content}}</p>
+                    <p class="has-text-dark">{{format_summary 1.content}}</p>
                 </div>
             </div>
         {{/if}}
