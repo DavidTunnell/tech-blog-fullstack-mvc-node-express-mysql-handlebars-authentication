@@ -18,7 +18,7 @@ Features:
 -   A navigation bar serving express routes.
 -   A dashboard to create, read, update and delete blog posts for the admin.
 -   Individual pages for users to create accounts, login and logout using the site using authentication.
--   The ability for users comment on blog posts.
+-   The ability for users comment on blog posts and for admins to delete them.
 -   An auto timeout logout where after a certain amount of time the user will need to login again for certain actions (add, update, delete, comments).
 -   Sessions and Cookie based authorization/security for parts of the application
 -   Client-side API consumption and AJAX DOM manipulation.

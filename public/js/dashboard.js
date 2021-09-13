@@ -46,7 +46,7 @@ const deletePostHandler = async (event) => {
             document.location.replace("/dashboard");
         } else {
             alert(
-                "Failed to submit post. " +
+                "Failed to delete post. " +
                     response.status +
                     ": " +
                     response.statusText

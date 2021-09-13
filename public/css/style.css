@@ -31,6 +31,14 @@ nav.navbar {
     margin-top: -3em;
 }
 
+.delete-comment {
+    text-decoration: underline;
+}
+
+.delete-comment:hover {
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 1025px) {
     .navbar-item img {
         max-height: 3em;

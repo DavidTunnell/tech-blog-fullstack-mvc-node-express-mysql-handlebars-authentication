@@ -28,6 +28,7 @@ router.get("/:id", async (req, res) => {
             ],
         });
         const post = postData.get({ plain: true });
+        console.log(post);
         if (post) {
             res.render("post", {
                 loggedIn: req.session.loggedIn,

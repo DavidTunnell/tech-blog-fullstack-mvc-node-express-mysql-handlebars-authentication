@@ -33,7 +33,42 @@ const submitCommentHandler = async (event) => {
     }
 };
 
+//delete a comment on the client to api
+const deleteCommentHandler = async (event) => {
+    event.preventDefault();
+
+    const deleteCommentId = event.target.getAttribute("data-id");
+    const currentPostId = document.querySelector(".current-post-id").innerHTML;
+    console.log(2);
+    //next add delete logical
+    if (deleteCommentId) {
+        const response = await fetch("/api/comment/" + deleteCommentId, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+        });
+        if (response.ok) {
+            document.location.replace(
+                "/post/" + currentPostId + "#comment-section"
+            );
+            document.location.reload();
+        } else {
+            alert(
+                "Failed to delete post. " +
+                    response.status +
+                    ": " +
+                    response.statusText
+            );
+        }
+    }
+    //then add logic to hide this for (non) admins and current user
+};
+
 //add event listeners
 document
     .querySelector(".comment-submit")
     .addEventListener("click", submitCommentHandler);
+
+const deleteLinks = document.querySelectorAll(".delete-comment");
+deleteLinks.forEach((el) =>
+    el.addEventListener("click", (event) => deleteCommentHandler(event))
+);
