@@ -1,5 +1,4 @@
 <html lang="en">
-
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,7 +18,6 @@
         <link rel="stylesheet" href="../css/style.css" />
         <script src="../js/config/apiConfig.js"></script>
     </head>
-
     <body>
         <!-- START NAV -->
         <nav class="navbar">
@@ -47,12 +45,14 @@
                             Home
                         </a>
                         {{#if loggedIn}}
-                            <a
-                                class="navbar-item is-size-5 has-text-weight-semibold"
-                                href="/dashboard"
-                            >
-                                Dashboard
-                            </a>
+                            {{#if loggedInUserData.isAdmin}}
+                                <a
+                                    class="navbar-item is-size-5 has-text-weight-semibold"
+                                    href="/dashboard"
+                                >
+                                    Dashboard
+                                </a>
+                            {{/if}}
                             <a
                                 class="navbar-item is-size-5 has-text-weight-semibold"
                                 href="/logout/"
@@ -60,7 +60,6 @@
                                 Logout
                             </a>
                         {{else}}
-
                             <a
                                 class="navbar-item is-size-5 has-text-weight-semibold"
                                 href="/login/"
@@ -74,14 +73,12 @@
                                 Signup
                             </a>
                         {{/if}}
-
                     </div>
                 </div>
             </div>
         </nav>
         <!-- END NAV -->
         {{{body}}}
-
         <footer class="footer">
             <div class="content has-text-centered">
                 <p>
@@ -101,5 +98,4 @@
         </footer>
         <script src="/js/main.js"></script>
     </body>
-
 </html>

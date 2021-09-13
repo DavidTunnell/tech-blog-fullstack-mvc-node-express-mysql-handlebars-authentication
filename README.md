@@ -2,6 +2,16 @@
 
 An MVC full stack blog project. [Live Demo Here](https://www.heroku.com).
 
+Seeded Admin account credentials are:
+
+-   username: david_test@gmail.com
+-   password: 12345
+
+Example Seeded User Credentials (or create your own account):
+
+-   username: test_test@gmail.com
+-   password: 12345
+
 Features:
 
 -   A homepage that showcases existing blog posts.
@@ -75,7 +85,5 @@ POST - http://localhost:3001/api/post/ - `{ "title": "Title of a Blog Post", "co
 
 ==========================
 
-//quality readme - url to repo
-//project comments
 //deployed to heroku - url to application
 // Application loads with no errors. - w2 nu checker

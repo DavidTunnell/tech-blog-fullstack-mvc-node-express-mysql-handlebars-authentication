@@ -7,4 +7,12 @@ const withAuth = (req, res, next) => {
     }
 };
 
-module.exports = withAuth;
+const withAuthAdmin = (req, res, next) => {
+    if (!req.session.loggedInUserData.isAdmin) {
+        res.redirect("/");
+    } else {
+        next();
+    }
+};
+
+module.exports = [withAuth, withAuthAdmin];
