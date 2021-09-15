@@ -7,7 +7,8 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node server.js",
         "seed": "node seeds/index.js",
-        "dev": "nodemon server.js"
+        "dev": "nodemon server.js",
+        "lint": "eslint ./"
     },
     "author": "",
     "license": "ISC",
@@ -23,6 +24,7 @@
     },
     "devDependencies": {
         "eslint": "^7.32.0",
+        "eslint-config-google": "^0.14.0",
         "nodemon": "^2.0.12"
     }
 }
