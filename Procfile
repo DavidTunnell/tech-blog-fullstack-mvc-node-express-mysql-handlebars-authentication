@@ -1,1 +1,1 @@
-node ./seeds/index.js
+worker: node ./seeds/index.js

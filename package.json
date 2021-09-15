@@ -5,8 +5,7 @@
     "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node seeds/index.js",
-        // "start": "node server.js",
+        "start": "node server.js",
         "seed": "node seeds/index.js",
         "dev": "nodemon server.js",
         "lint": "eslint ./"
