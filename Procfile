@@ -1,1 +1,0 @@
-worker: node ./seeds/index.js
