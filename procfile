@@ -1,0 +1,1 @@
+node ./seeds/index.js
