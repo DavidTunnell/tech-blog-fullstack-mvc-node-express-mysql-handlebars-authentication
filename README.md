@@ -1,6 +1,6 @@
 # Tech Blog - MVC, Node.js, Express.js, Handlebars.js, MySQL, Bulma
 
-An MVC full stack blog project. [Live Demo Here](https://www.heroku.com).
+An MVC full stack blog project. [Live Demo Here](https://mighty-earth-36141.herokuapp.com/).
 
 Seeded Admin account credentials are:
 
@@ -96,8 +96,6 @@ POST - http://localhost:3001/api/post/ - `{ "title": "Title of a Blog Post", "co
 ### Logout
 
 # ![logout screenshot](./assets/logout.png)
-
-//deployed to heroku - url to application
 
 // Application loads with no errors. - w2 nu checker
 
