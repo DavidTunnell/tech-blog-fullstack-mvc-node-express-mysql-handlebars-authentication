@@ -7,6 +7,7 @@ const signupFormHandler = async (event) => {
     const password = document.querySelector(".password-input").value.trim();
     //new accounts by default are not admins
     const is_admin = false;
+    //inform user if password is to short
     if (password.length < 6) {
         alert("The minimum password length is 6 characters.");
     } else if (username && email && password) {
